@@ -1,0 +1,23 @@
+{
+    "title": "Services We Provide",
+    "blocks": [
+        {
+            "id": 1,
+            "title": "NFT Art Generation",
+            "description": "With our automated tool we can generate the different arts you need to launch your product",
+            "icon": "/services/art.svg"
+        },
+        {
+            "id": 2,
+            "title": "Smart Contract",
+            "description": "Save time and money, we will generate the smart contract for your project",
+            "icon": "/services/money.svg"
+        },
+        {
+            "id": 3,
+            "title": "Minting Website",
+            "description": "You need to advertise and market your NFTs, we will build and design the minting website for you",
+            "icon": "/services/website.png"
+        }
+    ]
+}

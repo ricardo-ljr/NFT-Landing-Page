@@ -1,0 +1,20 @@
+{
+    "blocks": [
+        {
+            "id": 1,
+            "title": "Why use our services to create your NFTs??",
+            "description": "With our team of engineers and internal tools, we can seamlessly transform your art or product into an NFT, generate the smart contract and give you the advertising tools in order for you to launch your project without a hassle.",
+            "image": "/survey/blockchain.png",
+            "button": "Learn More",
+            "link": "#footer"
+        },
+        {
+            "id": 2,
+            "title": "If you could help us a bit...",
+            "description": "We're currently developing our tools and services in order to maximize your returns and provide the best service possible - it would mean A LOT to us if you could click the link below and answer a quick survey!",
+            "image": "/survey/survey.png",
+            "button": "Go To Survey",
+            "link": "#footer"
+        }
+    ]
+}
