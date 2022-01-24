@@ -10,7 +10,7 @@ export default function Home({ hero }) {
   return (
     <>
       <Head>
-        <title>Taskia | Landing Page</title>
+        <title>WeNFT | Landing Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
