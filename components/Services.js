@@ -13,6 +13,7 @@ const Services = () => {
                     {data.blocks.map(service =>
                         <CardService
                             id={service.id}
+                            key={service.id}
                             icon={service.icon}
                             title={service.title}
                             description={service.description}
