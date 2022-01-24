@@ -10,8 +10,8 @@ export default function Home({ hero }) {
   return (
     <>
       <Head>
-        <title>WeNFT | Landing Page</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>NIFTY | Landing Page</title>
+        <link rel="icon" href="../public/CompanyLogo.png" />
       </Head>
 
       <Hero />

@@ -9,8 +9,8 @@ const Header = () => {
             <div className="logo">
                 <Link href="/">
                     <a>
-                        {/* <Image src={data.logo} width={165} height={65} /> */}
-                        Logo Goes Up Here
+                        <Image src={data.logo} width={135} height={135} />
+
                     </a>
                 </Link>
             </div>
