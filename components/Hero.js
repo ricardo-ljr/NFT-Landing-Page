@@ -1,37 +1,35 @@
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
 import data from "../data/heroSection.json";
 
-
 const Hero = () => {
-    return (
-        <section className="hero-section">
-            <div className="container-hero">
+  return (
+    <section className="hero-section">
+      <div className="container-hero">
+        <div className="content-hero">
+          <div className="left-side">
+            <h1>{data.title}</h1>
+            <p>{data.description}</p>
+            <form>
+              <div className="form-group">
+                <button type="submit">
+                  <Link href="/mvp">For Individuals</Link>
+                </button>
+                <button type="submit">
+                  <Link href="/mvp">For Businesses</Link>
+                </button>
+              </div>
+            </form>
+          </div>
 
-                <div className="content-hero">
-
-                    <div className="left-side">
-                        <h1>{data.title}</h1>
-                        <p>{data.description}</p>
-                        <form>
-                            <div className="form-group">
-                                <button type="submit" ><a href="#footer">For Individuals</a></button>
-                                <button type="submit" ><a href="#footer">For Businesses</a></button>
-                            </div>
-                        </form>
-                    </div>
-
-
-                    {/* TODO: Substitute for better hero image */}
-                    <div className="right-side">
-                        <Image src="/hero.png" layout="fill" />
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-    )
-}
-
+          {/* TODO: Substitute for better hero image */}
+          <div className="right-side">
+            <Image src="/hero.png" layout="fill" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Hero;
