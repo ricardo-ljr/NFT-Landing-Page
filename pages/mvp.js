@@ -50,7 +50,7 @@ export default function mvp() {
                   name="service1"
                   value="contract"
                 />
-                <label for="vehicle1">Smart Contract</label>
+                <label htmlFor="service1">Smart Contract</label>
                 <br />
                 <input
                   type="checkbox"
@@ -58,21 +58,21 @@ export default function mvp() {
                   name="service2"
                   value="art"
                 />
-                <label for="vehicle1">Art Generation</label>
+                <label htmlFor="service1">Art Generation</label>
                 <input
                   type="checkbox"
                   id="service2"
                   name="service2"
                   value="art"
                 />
-                <label for="vehicle1">Minting Website</label>
+                <label htmlFor="service1">Minting Website</label>
                 <input
                   type="checkbox"
                   id="service2"
                   name="service2"
                   value="art"
                 />
-                <label for="vehicle1">Marketing</label>
+                <label htmlFor="service1">Marketing</label>
               </div>
               <button type="submit">Submit</button>
             </form>
