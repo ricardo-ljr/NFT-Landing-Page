@@ -48,6 +48,24 @@ export default function mvp() {
     setRequest(newContract);
   }
 
+  function setWebsite(e) {
+    const website = e.target.checked;
+    const newWebsite = { ...request, website };
+    setRequest(newWebsite);
+  }
+
+  function setArt(e) {
+    const art = e.target.checked;
+    const newArt = { ...request, art };
+    setRequest(newArt);
+  }
+
+  function setMarketing(e) {
+    const marketing = e.target.checked;
+    const newMarketing = { ...request, marketing };
+    setRequest(newMarketing);
+  }
+
   async function handleSubmit() {
     const { error } = await supabase.from("requests").insert([request]);
     console.log(request);
@@ -110,7 +128,7 @@ export default function mvp() {
                   id="contract"
                   name="contract"
                   value="contract"
-                  onChange={(e) => setNotes(e)}
+                  onChange={(e) => setContract(e)}
                 />
                 <label htmlFor="contract">Smart Contract</label>
                 <br />
@@ -119,7 +137,7 @@ export default function mvp() {
                   id="art-generation"
                   name="art-generation"
                   value="art-generation"
-                  onChange={(e) => setContract(e)}
+                  onChange={(e) => setArt(e)}
                 />
                 <label htmlFor="art-generation">Art Generation</label>
                 <input
@@ -127,6 +145,7 @@ export default function mvp() {
                   id="minting-website"
                   name="minting-website"
                   value="minting-website"
+                  onChange={(e) => setWebsite(e)}
                 />
                 <label htmlFor="minting-website">Minting Website</label>
                 <input
@@ -134,6 +153,7 @@ export default function mvp() {
                   id="marketing"
                   name="marketing"
                   value="marketing"
+                  onChange={(e) => setMarketing(e)}
                 />
                 <label htmlFor="marketing">Marketing</label>
               </div>
