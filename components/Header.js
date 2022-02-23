@@ -11,7 +11,7 @@ const Header = ({ mvp }) => {
       <div className="logo">
         <Link href="/">
           <a>
-            <Image src={data.logo} width={135} height={135} />
+            <Image src={data.logo} width={135} height={135} alt="logo" />
           </a>
         </Link>
       </div>

@@ -24,7 +24,7 @@ const Hero = () => {
 
           {/* TODO: Substitute for better hero image */}
           <div className="right-side">
-            <Image src="/hero.png" layout="fill" />
+            <Image src="/hero.png" layout="fill" alt="hero" />
           </div>
         </div>
       </div>
