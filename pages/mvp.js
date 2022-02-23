@@ -1,6 +1,67 @@
 import Head from "next/head";
+import { v4 as uuid } from "uuid";
+
+import { useState, useEffect } from "react";
+import { supabase } from "../pages/util/supabaseClient";
 
 export default function mvp() {
+  const [request, setRequest] = useState({
+    id: uuid(),
+    name: "",
+    email: "",
+    phone: "",
+    notes: "",
+    contract: false,
+    website: false,
+    art: false,
+    marketing: false,
+    request_sent: new Date(),
+  });
+
+  function setName(e) {
+    const name = e.target.value;
+    const newName = { ...request, name };
+    setRequest(newName);
+  }
+
+  function setEmail(e) {
+    const email = e.target.value;
+    const newEmail = { ...request, email };
+    setRequest(newEmail);
+  }
+
+  function setPhone(e) {
+    const phone = e.target.value;
+    const newPhone = { ...request, phone };
+    setRequest(newPhone);
+  }
+
+  function setNotes(e) {
+    const notes = e.target.value;
+    const newNotes = { ...request, notes };
+    setRequest(newNotes);
+  }
+
+  function setContract(e) {
+    const contract = e.target.checked;
+    const newContract = { ...request, contract };
+    setRequest(newContract);
+  }
+
+  async function handleSubmit() {
+    const { error } = await supabase.from("requests").insert([request]);
+    console.log(request);
+    console.log("Submitted");
+
+    if (error) {
+      alert("Insertion failed");
+      console.error(error.message);
+      return;
+    }
+
+    alert("Request submitted successfully!");
+  }
+
   return (
     <div>
       <Head>
@@ -21,60 +82,70 @@ export default function mvp() {
                 type="text"
                 placeholder="Full Name*"
                 required
-                onChange={(e) => setName(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Email*"
-                required
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setName(e)}
               />
               <input
                 type="email"
+                placeholder="Email*"
+                required
+                onChange={(e) => setEmail(e)}
+              />
+              <input
+                type="text"
                 placeholder="Phone Number"
                 required
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setPhone(e)}
               />
               <label className="label-group">Tell us about your project</label>
               <textarea
                 type="text"
                 placeholder="How Can We Help*"
                 require
-                onChange={(e) => setNotes(e.target.value)}
+                onChange={(e) => setNotes(e)}
               />
               <label className="label-group">What are you looking for?</label>
               <div className="services-group">
                 <input
                   type="checkbox"
-                  id="service1"
-                  name="service1"
+                  id="contract"
+                  name="contract"
                   value="contract"
+                  onChange={(e) => setNotes(e)}
                 />
-                <label htmlFor="service1">Smart Contract</label>
+                <label htmlFor="contract">Smart Contract</label>
                 <br />
                 <input
                   type="checkbox"
-                  id="service2"
-                  name="service2"
-                  value="art"
+                  id="art-generation"
+                  name="art-generation"
+                  value="art-generation"
+                  onChange={(e) => setContract(e)}
                 />
-                <label htmlFor="service1">Art Generation</label>
+                <label htmlFor="art-generation">Art Generation</label>
                 <input
                   type="checkbox"
-                  id="service2"
-                  name="service2"
-                  value="art"
+                  id="minting-website"
+                  name="minting-website"
+                  value="minting-website"
                 />
-                <label htmlFor="service1">Minting Website</label>
+                <label htmlFor="minting-website">Minting Website</label>
                 <input
                   type="checkbox"
-                  id="service2"
-                  name="service2"
-                  value="art"
+                  id="marketing"
+                  name="marketing"
+                  value="marketing"
                 />
-                <label htmlFor="service1">Marketing</label>
+                <label htmlFor="marketing">Marketing</label>
               </div>
-              <button type="submit">Submit</button>
+              <button
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleSubmit();
+                }}
+              >
+                Submit
+              </button>
             </form>
           </div>
         </form>
