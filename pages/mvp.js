@@ -2,7 +2,7 @@ import Head from "next/head";
 import { v4 as uuid } from "uuid";
 
 import { useState, useEffect } from "react";
-import { supabase } from "../pages/util/supabaseClient";
+import { supabase } from "../util/supabaseClient";
 
 export default function Mvp() {
   const [request, setRequest] = useState({
