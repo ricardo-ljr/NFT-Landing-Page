@@ -4,7 +4,7 @@ import { v4 as uuid } from "uuid";
 import { useState, useEffect } from "react";
 import { supabase } from "../pages/util/supabaseClient";
 
-export default function mvp() {
+export default function Mvp() {
   const [request, setRequest] = useState({
     id: uuid(),
     name: "",
@@ -118,7 +118,7 @@ export default function mvp() {
               <textarea
                 type="text"
                 placeholder="How Can We Help*"
-                require
+                required
                 onChange={(e) => setNotes(e)}
               />
               <label className="label-group">What are you looking for?</label>
