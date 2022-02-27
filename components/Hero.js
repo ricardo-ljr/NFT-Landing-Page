@@ -12,12 +12,12 @@ const Hero = () => {
             <p>{data.description}</p>
             <form>
               <div className="form-group">
-                <button type="submit">
-                  <Link href="/mvp">For Individuals</Link>
-                </button>
-                <button type="submit">
-                  <Link href="/mvp">For Businesses</Link>
-                </button>
+                <Link href="/mvp">
+                  <button>For Individuals</button>
+                </Link>
+                <Link href="/mvp">
+                  <button>For Businesses</button>
+                </Link>
               </div>
             </form>
           </div>
